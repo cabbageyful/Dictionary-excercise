@@ -1,5 +1,7 @@
 # put your code here.
 
+from string import punctuation
+
 def counting_words(file_data):
     """Finds total count of each word in file.
 
@@ -20,6 +22,8 @@ def counting_words(file_data):
 
     
     for word in my_list:
+        word = word.lower()
+        word = word.translate(None, punctuation)
         word_count[word] = word_count.get(word, 0) + 1
         # print word, word_count[word]
     return word_count
